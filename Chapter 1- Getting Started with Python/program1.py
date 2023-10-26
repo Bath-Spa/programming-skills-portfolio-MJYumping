@@ -64,14 +64,14 @@ print(str1 + str2 + str3)
 # First is to import the math library so that we can use the pi constant.
 from math import pi
 
-# Next we ask the user for a given radius of a circle (in integers) and at the same time placing it into a variable.
-rad1 = int(input("Type a given radius of a circle and I will give you its area:"))
+# Next we ask the user for a given radius of a circle (in integers, and in centimeters) and at the same time placing it into a variable.
+rad1 = int(input("Type a given radius (in centimeters) of a circle and I will give you its area:"))
 
-# Next we compute for the area of the circle with the proper formula and using the radius the user inputed. We then place the product into a variable.
+# Next we compute for the area of the circle with the proper formula and using the radius that the user inputed. We then place the product into a variable.
 radXpi = pi * rad1 ** 2
 
 # Finally, we use the print function to display to the user the area of their circle together with the corresponding radius.
-print("The area of a circle with a given circumference of", rad1, "is: ", radXpi)
+print("The area of a circle with a given circumference of", rad1, "is: ", radXpi, "cm")
 
 
 
