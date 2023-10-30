@@ -25,7 +25,8 @@ print(e + f)
 # First step is to import "sys" which will provide information about the python interpreter.
 import sys
 
-# Next step is to print the "sys.python" string which pulls the version of python from the sys module and note that this will not work if 'sys' is not defined.
+# Next step is to print the "sys.python" string which pulls the version 
+# of python from the sys module and note that this will not work if 'sys' is not defined.
 print("The version of python installed is: "  + sys.version)
 
 
@@ -37,14 +38,15 @@ print("The version of python installed is: "  + sys.version)
 # Firstly we import the date and time using the program:
 from datetime import datetime
 
-# From that datetime module, we take the current date and time using "datetime.now()" and at the same time store it into a variable to print for later.
+# From that datetime module, we take the current date and time using "datetime.now()" 
+# and at the same time store it into a variable to print for later.
 dnt = datetime.now()
 print("The current date and time is: ", dnt)
 
 
 
 
-### EXERCISE 4: Strings Concatination
+### EXERCISE 4: Strings Concatenation
 # Write three strings in different variables and print the output as one string.
 
 # First is to divide the final sentence output into 3 strings and assign each to a variable
@@ -52,7 +54,8 @@ str1 = "The cat was chasing a fox "
 str2 = "whilst the lion looked on, amused "
 str3 = "as he fell back asleep." 
 
-# We then use print command and concatenate the three variables to display all strings into one continuous string/sentence.
+# We then use print command and concatenate the three variables to display all 
+# strings into one continuous string/sentence.
 print(str1 + str2 + str3)
 
 
@@ -61,17 +64,18 @@ print(str1 + str2 + str3)
 ### EXERCISE 5: Compute area of Circle
 # Write a Python program which accepts the radius of a circle from the user and compute the area.
 
-# First is to import the math library so that we can use the pi constant.
+# First is to import the math library so we can use the pi constant.
 from math import pi
 
-# Next we ask the user for a given radius of a circle (in integers, and in centimeters) and at the same time placing it into a variable.
-rad1 = int(input("Type a given radius (in centimeters) of a circle and I will give you its area:"))
+# Next we ask the user for a given radius of a circle and at the same time placing it into a variable.
+rad1 = int(input("Type a given radius (in centimeters) of a circle and I will give you its area:\n"))
 
-# Next we compute for the area of the circle with the proper formula and using the radius that the user inputed. We then place the product into a variable.
+# Next we compute for the area of the circle with the proper formula and using the radius that the user inputed.
+# We then place the product into a variable.
 radXpi = pi * rad1 ** 2
 
-# Finally, we use the print function to display to the user the area of their circle together with the corresponding radius.
-print("The area of a circle with a given circumference of", rad1, "is: ", radXpi, "cm")
+# Finally, we use the print function to display to the user the area of thecircle together with the inputted radius.
+print("The area of a circle with a given circumference of", rad1, "is: ", radXpi, "cm\n")
 
 
 

@@ -30,18 +30,21 @@ my_str = "one" "two" "three"
 print(my_str)
 
 
+#Python Program to Assign a message to a variable
+
+msg = "Hello, this is assigning a message to a variable program"
+
+print(msg)
+
+#Program 7 
+#Python code to demonstrate escape character
+
+#string
+a = "This\nis\tPython Language"
+print(a)
 
 
+#Python code to print number
+a = int(input("Enter your favourite number = "))
+print("My favourite number is = {0} " .format(a))
 
-#These programs beyond are programs I tried out but were outside of what we discussed
-
-#This program uses print function and also makes use of variable
-age = 18
-true_age = age + 3
-print("Your age is actually:", true_age, "!")
-
-#This program makes use of an input function and prints what the user types
-sales = input("Enter the amount of " + 
-      "sales for each day and " +
-      "press enter:")
-print("The sales for today is " + sales)
