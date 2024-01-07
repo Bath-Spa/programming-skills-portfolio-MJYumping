@@ -1,13 +1,19 @@
-# Establishing all global variables that will be used in each function in the Vending Machine program.
+# Supplementary Assets:
+# Google Sheet of organized menu of items. (Each item highlighted to a specific category.)
+# https://docs.google.com/spreadsheets/d/1Bzic8uVTzE-dQmqj2uDYWkK5ziw7CyVq3PPXCD1ltHA/edit?usp=sharing
 
-#Variable wherein the 3 digit code the user will use to specify their chosen product will be stored.
+
+# FULL PROGRAM:
+
+# Establishing all global variables that will be used in each function in the Vending Machine program:
+    # Variable wherein the 3 digit code the user will use to specify their chosen product will be stored.
 threedigit = 000
 
-# Variables to be used within the money change system.
+    # Variables to be used within the money change system.
 amount_inserted = 0.00
 amount_due = 0.00
 
-# Variables to be used as stock trackers for all products in the vending machine.
+    # Variables to be used as stock trackers for all products in the vending machine.
 maidubaistock = 3
 fijistock = 3
 Al_Ainstock = 3

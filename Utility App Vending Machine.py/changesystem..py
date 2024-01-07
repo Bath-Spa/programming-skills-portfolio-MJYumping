@@ -25,4 +25,6 @@ if amount_inserted > 1.00:
 elif amount_inserted < 1.00:
     while amount_inserted < 1.00:
         amount_inserted = amount_inserted + float(input("Please insert amount due: "))
-    
+    print("Change is now being dispensed.")
+else:
+    print("Item now being dispensed.")

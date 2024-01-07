@@ -62,6 +62,14 @@ elif amount_inserted < 1.00:
     print("Change is now being dispensed.")
 else:
     print("Item now being dispensed.")
+
+def buyanother():
+    buyagain = input("Would you like to buy another item? YES or NO: ")
+    if buyagain == "YES":
+
+    else:
+    
+
     
     
     
