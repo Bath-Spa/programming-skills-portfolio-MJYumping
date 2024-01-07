@@ -64,6 +64,7 @@ def change_system():
                 amount_inserted = amount_inserted - amount_due
                 print(f"Your item and change of", + amount_inserted, "now being dispensed.")
                 amount_inserted = 0.00
+                amount_due = 0.00
                 buyanother()
         print("Item is now being dispensed.")
         amount_inserted = 0.00
