@@ -12,25 +12,27 @@ threedigit = 000
     # Variables to be used within the money change system.
 amount_inserted = 0.00
 amount_due = 0.00
+purchased_item = ""
 
     # Variables to be used as stock trackers for all products in the vending machine.
+    #(For checking of stock feature, some values are set to a low number.)
 maidubaistock = 3
-fijistock = 3
+fijistock = 10
 Al_Ainstock = 3
 Coca_Colastock = 3
-Pepsistock = 3
+Pepsistock = 4
 Mountain_Dewstock = 3
 sevenUpstock = 3
 Coke_Zerostock = 3
-dietpepsistock = 3
+dietpepsistock = 10
 Gatoradestock =3 
-Monster_Energystock = 3
+Monster_Energystock = 5
 Celcius_Live_Fitstock = 3
 Red_Bull_Zerostock = 3
 MnMstock = 3
 MnM_Peanutsstock = 3
 Reeses_Piecesstock = 3
-KitKat_Four_Fingerstock =3 
+KitKat_Four_Fingerstock = 10 
 skittlesstock = 3
 Snickersstock = 3
 Hersheys_CnCreamstock = 3
@@ -49,7 +51,7 @@ def change_system():
 # item from the users inputted money, resulting in the right amount of change to be given back.
     if amount_inserted > amount_due:
         amount_inserted = amount_inserted - amount_due
-        print(f"Your item and change of", + amount_inserted, "now being dispensed.")
+        print(f"Your item", purchased_item, "and change of", amount_inserted, "now being dispensed.")
         amount_inserted = 0.00  
         amount_due = 0.00 
         buyanother() 
@@ -62,7 +64,7 @@ def change_system():
             amount_inserted = amount_inserted + float(input("Please insert amount due: "))
             if amount_inserted > amount_due:
                 amount_inserted = amount_inserted - amount_due
-                print(f"Your item and change of", + amount_inserted, "now being dispensed.")
+                print(f"Your item", purchased_item, "and change of", amount_inserted, "now being dispensed.")
                 amount_inserted = 0.00
                 amount_due = 0.00
                 buyanother()
@@ -73,7 +75,7 @@ def change_system():
 
 # If however the user gives the exact amount of money needed, the program will straightaway give the item without any change.
     else:
-        print("Item now being dispensed.")
+        print(purchased_item, "is now being dispensed.")
         amount_inserted = 0.00
         amount_due = 0.00 #The value of the used variables are then reset to accomodate the next order.
         buyanother() #The user is then given a prompt (using a defined variable) to ask if they want to order again.
@@ -87,6 +89,7 @@ def checkthreedigit():
     global threedigit  # variable where the 3 digit code will be stored
     global amount_inserted  # variable where users money will be stored and what amount due will be subtracted against.
     global amount_due # the price needed to be met in order to give the item, its value is determined by the item the user chooses.
+    global purchased_item
     
 # Global variables to be used as stock trackers, if this number reaches 0, the user will be informed that no more of that item can be given.
     global maidubaistock
@@ -112,6 +115,7 @@ def checkthreedigit():
     global Nestles_Milky_Barstock
 
 
+
     threedigit = input("Please Enter the 3-Digit Number of Your Chosen Product: ")
 
     if threedigit == "101":   #if elif block that checks which 3 digit code; which item the user wants.
@@ -121,6 +125,8 @@ def checkthreedigit():
             amount_due = amount_due + 1.00   #sets the amount due; money needed to be matched in order to give item.
 
             maidubaistock += -1   #code to subtract 1 unit from the item's stock tracker.
+
+            purchased_item = "Mai Dubai (500ml)"
 
             amount_inserted = amount_inserted + 1.00   #code to set the amount needed to be inserted by the user.
 
@@ -147,6 +153,7 @@ def checkthreedigit():
         if fijistock > 0:
             amount_due = amount_due + 8.55
             fijistock += -1
+            purchased_item = "Fiji (500ml)"
             amount_inserted = amount_inserted + 8.55
             change_system()
         elif fijistock == 0:
@@ -162,6 +169,7 @@ def checkthreedigit():
         if Al_Ainstock > 0:
           amount_due = amount_due + 1.00
           Al_Ainstock += -1
+          purchased_item = "Al Ain (500ml)"
           amount_inserted = amount_inserted + 1.00
           change_system()
         elif Al_Ainstock == 0:
@@ -177,6 +185,7 @@ def checkthreedigit():
         if Coca_Colastock > 0:
           amount_due = amount_due + 3.50
           Coca_Colastock += -1
+          purchased_item = "Coca-Cola (500ml)"
           amount_inserted = amount_inserted + 3.50
           change_system()
         elif Coca_Colastock == 0:
@@ -191,6 +200,7 @@ def checkthreedigit():
         if Pepsistock > 0:
           amount_due = amount_due + 3.50
           Pepsistock += -1
+          purchased_item = "Pepsi (500ml)"
           amount_inserted = amount_inserted + 3.50
           change_system()
         elif Pepsistock == 0:
@@ -205,6 +215,7 @@ def checkthreedigit():
         if Mountain_Dewstock > 0:
           amount_due = amount_due + 3.50
           Mountain_Dewstock += -1
+          purchased_item = "Mountain Dew (500ml)"
           amount_inserted = amount_inserted + 3.50
           change_system()
         elif Mountain_Dewstock == 0:
@@ -219,6 +230,7 @@ def checkthreedigit():
         if sevenUpstock > 0:
           amount_due = amount_due + 3.50
           sevenUpstock += -1
+          purchased_item = "7Up (500ml)"
           amount_inserted = amount_inserted + 3.50
           change_system()
         elif sevenUpstock == 0:
@@ -233,6 +245,7 @@ def checkthreedigit():
         if Coke_Zerostock > 0:
           amount_due = amount_due + 5.00
           Coke_Zerostock += -1
+          purchased_item = "Coke Zero (350ml)"
           amount_inserted = amount_inserted + 5.00
           change_system()
         elif Coke_Zerostock == 0:
@@ -247,6 +260,7 @@ def checkthreedigit():
         if dietpepsistock > 0:
           amount_due = amount_due + 5.00
           dietpepsistock += -1
+          purchased_item = "Diet Pepsi (350ml)"
           amount_inserted = amount_inserted + 5.00
           change_system()
         elif dietpepsistock == 0:
@@ -261,6 +275,7 @@ def checkthreedigit():
         if Gatoradestock > 0:
           amount_due = amount_due + 5.00
           Gatoradestock += -1
+          purchased_item = "Gatorade (495ml)"
           amount_inserted = amount_inserted + 5.00
           change_system()
         elif Gatoradestock == 0:
@@ -275,6 +290,7 @@ def checkthreedigit():
         if Monster_Energystock > 0:
           amount_due = amount_due + 1.00
           Monster_Energystock += -1
+          purchased_item = "Monster Energy (500ml)"
           amount_inserted = amount_inserted + 1.00
           change_system()
         elif Monster_Energystock == 0:
@@ -289,6 +305,7 @@ def checkthreedigit():
         if Celcius_Live_Fitstock > 0:
           amount_due = amount_due + 8.00
           Celcius_Live_Fitstock += -1
+          purchased_item = "Celcius Live Fit (355ml)"
           amount_inserted = amount_inserted + 8.00
           change_system()
         elif Celcius_Live_Fitstock == 0:
@@ -304,6 +321,7 @@ def checkthreedigit():
         if Red_Bull_Zerostock > 0:
           amount_due = amount_due + 9.60
           Red_Bull_Zerostock += -1
+          purchased_item = "Red Bull Energy Drink Zero (355ml)"
           amount_inserted = amount_inserted + 9.60
           change_system()
         elif Red_Bull_Zerostock == 0:
@@ -319,6 +337,7 @@ def checkthreedigit():
         if MnMstock > 0:
           amount_due = amount_due + 3.80
           MnMstock += -1
+          purchased_item = "M&M (45g)"
           amount_inserted = amount_inserted + 3.80
           change_system()
         elif MnMstock == 0:
@@ -334,6 +353,7 @@ def checkthreedigit():
         if MnM_Peanutsstock > 0:
           amount_due = amount_due + 4.00
           MnM_Peanutsstock += -1
+          purchased_item = "M&M Peanuts (45g)"
           amount_inserted = amount_inserted + 4.00
           change_system()
         elif MnM_Peanutsstock == 0:
@@ -348,6 +368,7 @@ def checkthreedigit():
         if Reeses_Piecesstock > 0:
           amount_due = amount_due + 3.30
           Reeses_Piecesstock+= -1
+          purchased_item = "Reese's Pieces (45g)"
           amount_inserted = amount_inserted + 3.30
           change_system()
         elif Reeses_Piecesstock == 0:
@@ -362,6 +383,7 @@ def checkthreedigit():
         if KitKat_Four_Fingerstock > 0:
           amount_due = amount_due + 2.70
           KitKat_Four_Fingerstock += -1
+          purchased_item = "KitKat 4 Finger (36.5g)"
           amount_inserted = amount_inserted + 2.70
           change_system()
         elif KitKat_Four_Fingerstock == 0:
@@ -376,6 +398,7 @@ def checkthreedigit():
         if skittlesstock > 0:
           amount_due = amount_due + 2.75
           skittlesstock += -1
+          purchased_item = "Skittles (38g)"
           amount_inserted = amount_inserted + 2.75
           change_system()
         elif skittlesstock == 0:
@@ -390,6 +413,7 @@ def checkthreedigit():
         if Snickersstock > 0:
           amount_due = amount_due + 3.15
           Snickersstock += -1
+          purchased_item = "Snickers (45g)"
           amount_inserted = amount_inserted + 3.15
           change_system()
         elif Snickersstock == 0:
@@ -404,6 +428,7 @@ def checkthreedigit():
         if Hersheys_CnCreamstock > 0:
           amount_due = amount_due + 3.80
           Hersheys_CnCreamstock += -1
+          purchased_item = "Hershey's Cookies & Cream (40g)"
           amount_inserted = amount_inserted + 3.80
           change_system()
         elif Hersheys_CnCreamstock == 0:
@@ -418,6 +443,7 @@ def checkthreedigit():
         if Nestles_Milky_Barstock > 0:
           amount_due = amount_due + 1.30
           Nestles_Milky_Barstock += -1
+          purchased_item = "Nestle's Milky Bar (12g)"
           amount_inserted = amount_inserted + 1.30
           change_system()
         elif Nestles_Milky_Barstock == 0:
@@ -647,7 +673,7 @@ def filterloop():   # Function that prompts the user to enter a filter among the
     elif chosenfilter == "Nut-Free":
         menu_nutfree()
     else:    #else block that informs the user if what they entered is not one of the filter options.
-        print("\nSorry, '", chosenfilter, "' is not an option.\n")
+        print("\nSorry, '", chosenfilter, "' is not an option. You may have made a typo (Case-sensitive).\n")
         filterloop()
 
 # Function to ask if the user wants to use the filter system. 
@@ -673,7 +699,7 @@ def menu():
 
 # Function to begin the program with a prompt telling the user to press enter to start the program.
 def start_screen(): 
-    print("Thank you for choosing our vending machine.")
+    print("\nThank you for choosing our vending machine.")
     input("Press Enter to See Menu.")
     menu()
 
