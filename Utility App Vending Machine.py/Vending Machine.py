@@ -48,7 +48,7 @@ def change_system():
     amount_inserted = float(input("Please insert amount due: "))
 
 # If amount inserted is greater than amount due, the program will subtract the price of the chosen 
-# item from the users inputted money, resulting in the right amount of change to be given back.
+# item from the user's inputted money, resulting in the right amount of change to be given back.
     if amount_inserted > amount_due:
         amount_inserted = amount_inserted - amount_due
         print(f"Your item", purchased_item, "and change of", amount_inserted, "now being dispensed.")
@@ -68,7 +68,7 @@ def change_system():
                 amount_inserted = 0.00
                 amount_due = 0.00
                 buyanother()
-        print("Item is now being dispensed.")
+        print("Item", purchased_item, "is now being dispensed.")
         amount_inserted = 0.00
         amount_due = 0.00
         buyanother()
